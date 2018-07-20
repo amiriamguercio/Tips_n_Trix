@@ -1,0 +1,12 @@
+##How to subset some lines from a file from bash zipped and unzipped for testing 
+
+#for a normal (unzipped file)
+cat path/to/file/filename.txt | head -n 1000000 > newfile.txt
+
+
+#for a zipped file (say a fq.gz) when I want a small zipped file in the end
+zcat path/to/file/filename.fastq.gz | head -n 1000 > newfile.fastq | gzip newfile.fastq
+
+##of course tail -n works too
+
+
